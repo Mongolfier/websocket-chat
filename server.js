@@ -18,7 +18,7 @@ wss.on("connection", (ws) => {
     const {name, message} = JSON.parse(rawMessage);
     messages.push({name, message});
     for (const id in clients) {
-        clients[id].send(JSON.stringify([{name, message}]))
+      clients[id].send(JSON.stringify([{name, message}]))
     }
   })
 

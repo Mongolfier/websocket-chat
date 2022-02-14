@@ -18,9 +18,9 @@
     ws.onmessage = (message) => {
       const messages = JSON.parse(message.data);
       messages.forEach((val) => {
-          const messageEl = document.createElement('div');
-          messageEl.appendChild(document.createTextNode(`${val.name}: ${val.message}`));
-          chat.appendChild(messageEl);
+        const messageEl = document.createElement('div');
+        messageEl.appendChild(document.createTextNode(`${val.name}: ${val.message}`));
+        chat.appendChild(messageEl);
       })
     }
     const send = (event) => {
@@ -28,7 +28,7 @@
       const name = document.getElementById("name").value;
       const message = document.getElementById("message").value;
       ws.send(JSON.stringify({
-          name, message
+        name, message
       }))
       return false;
     }
